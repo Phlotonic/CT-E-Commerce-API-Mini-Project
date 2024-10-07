@@ -1,0 +1,901 @@
+{
+	"info": {
+		"_postman_id": "ea91516c-a911-4614-86d4-0fc7ffb55e59",
+		"name": "CT-E-Commerce-API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "38696438",
+		"_collection_link": "https://coding-temple.postman.co/workspace/Coding-Temple-Workspace~0ad2f9a9-0dce-4f02-9de2-df02b7119cb6/collection/38696438-ea91516c-a911-4614-86d4-0fc7ffb55e59?action=share&source=collection_link&creator=38696438"
+	},
+	"item": [
+		{
+			"name": "e_commerce_db",
+			"item": [
+				{
+					"name": "Customer Actions",
+					"item": [
+						{
+							"name": "Get Customers",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://127.0.0.1:5000/customers",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "5000",
+									"path": [
+										"customers"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Create Customer",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"Pickles Smithereens\",\r\n    \"id\": \"8\",\r\n    \"email\": \"p.smithereens@example.com\",\r\n    \"phone\": \"1478523690\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://127.0.0.1:5000/customers",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "5000",
+									"path": [
+										"customers"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update Customer",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"Pickles Smith\",\r\n    \"id\": \"9\",\r\n    \"email\": \"p.smith@example.com\",\r\n    \"phone\": \"1478523690\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://127.0.0.1:5000/customers/9",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "5000",
+									"path": [
+										"customers",
+										"9"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete Customer",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://127.0.0.1:5000/customers/3",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "5000",
+									"path": [
+										"customers",
+										"3"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "By email",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://127.0.0.1:5000/customers/by-email?email=john.doe@example.com",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "5000",
+									"path": [
+										"customers",
+										"by-email"
+									],
+									"query": [
+										{
+											"key": "email",
+											"value": "john.doe@example.com"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "get_customer_orders",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://127.0.0.1:5000/customers/5/orders",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "5000",
+									"path": [
+										"customers",
+										"5",
+										"orders"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Product Actions",
+					"item": [
+						{
+							"name": "get products",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://127.0.0.1:5000/products",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "5000",
+									"path": [
+										"products"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Add Product",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"Puma\",\r\n    \"price\": 39.99,\r\n    \"stock\": 12\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://127.0.0.1:5000/products",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "5000",
+									"path": [
+										"products"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update Product",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"id\": 3,\r\n    \"name\": \"Adidas\",\r\n    \"price\": 69.99,\r\n    \"stock\": 35\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://127.0.0.1:5000/products/3",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "5000",
+									"path": [
+										"products",
+										"3"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete Product",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://127.0.0.1:5000/products/2",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "5000",
+									"path": [
+										"products",
+										"2"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "query_product_by_id",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://127.0.0.1:5000/products/by-id/3",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "5000",
+									"path": [
+										"products",
+										"by-id",
+										"3"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "get_product_stock",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://127.0.0.1:5000/products/3/stock",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "5000",
+									"path": [
+										"products",
+										"3",
+										"stock"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "update_product_stock",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"stock\": 0  // Replace with the new stock value\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://127.0.0.1:5000/products/3/stock",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "5000",
+									"path": [
+										"products",
+										"3",
+										"stock"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "customer_account actions",
+					"item": [
+						{
+							"name": "add_customer_account",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"username\": \"janed\",\r\n    \"password\": \"janetothedoe\",\r\n    \"customer_id\": \"5\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://127.0.0.1:5000/customer_accounts",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "5000",
+									"path": [
+										"customer_accounts"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "get_customer_account",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://127.0.0.1:5000/customer_accounts/1",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "5000",
+									"path": [
+										"customer_accounts",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "update_customer_account",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"customer_id\": 5,\r\n    \"id\": 1,\r\n    \"password\": \"janetothedoez\",\r\n    \"username\": \"janed\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://127.0.0.1:5000/customer_accounts/1",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "5000",
+									"path": [
+										"customer_accounts",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "delete_customer_account",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://127.0.0.1:5000/customer_accounts/1",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "5000",
+									"path": [
+										"customer_accounts",
+										"1"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Orders Actions",
+					"item": [
+						{
+							"name": "place_order",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"customer_id\": \"5\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://127.0.0.1:5000/orders",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "5000",
+									"path": [
+										"orders"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "get_order",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://127.0.0.1:5000/orders/3",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "5000",
+									"path": [
+										"orders",
+										"3"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "update_order_status",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"status\": \"processing\"  // Use the appropriate status value\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://127.0.0.1:5000/orders/3/status",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "5000",
+									"path": [
+										"orders",
+										"3",
+										"status"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "cancel_order",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"url": {
+									"raw": "http://127.0.0.1:5000/orders/3/cancel",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "5000",
+									"path": [
+										"orders",
+										"3",
+										"cancel"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "get_order_total_price",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://127.0.0.1:5000/orders/3/total-price",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "5000",
+									"path": [
+										"orders",
+										"3",
+										"total-price"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Author Actions",
+					"item": [
+						{
+							"name": "Post Author",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"J.R.R. Tolkien\",\r\n    \"birth_year\": \"1910\",\r\n    \"nationality\": \"South African\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://127.0.0.1:5000/authors",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "5000",
+									"path": [
+										"authors"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Book Actions",
+					"item": [
+						{
+							"name": "Post Book",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"title\": \"LOTR\",\r\n    \"genre\": \"fantasy\",\r\n    \"price\": 19.99,\r\n    \"publication_date\": \"1950-01-01\",\r\n    \"author_id\":\"5\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://127.0.0.1:5000/books",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "5000",
+									"path": [
+										"books"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Books",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://127.0.0.1:5000/books",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "5000",
+									"path": [
+										"books"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Genres",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://127.0.0.1:5000/genres",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "5000",
+									"path": [
+										"genres"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "search_books",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://127.0.0.1:5000/search_books?keyword=R",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "5000",
+									"path": [
+										"search_books"
+									],
+									"query": [
+										{
+											"key": "keyword",
+											"value": "R"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "books by authors",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"authors\": \"J.K. Rowling, J.R.R. Tolkien\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://127.0.0.1:5000/books_by_authors",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "5000",
+									"path": [
+										"books_by_authors"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "books_by_period",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://127.0.0.1:5000/books_by_period?start_date=2000-01-01&end_date=2020-01-01",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "5000",
+									"path": [
+										"books_by_period"
+									],
+									"query": [
+										{
+											"key": "start_date",
+											"value": "2000-01-01"
+										},
+										{
+											"key": "end_date",
+											"value": "2020-01-01"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Welcome Message",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:5000/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
