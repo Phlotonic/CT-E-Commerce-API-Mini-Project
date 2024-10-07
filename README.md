@@ -3,17 +3,20 @@ E-Commerce API - README
 This project implements a RESTful API for an e-commerce platform using Flask, SQLAlchemy, and Marshmallow. It provides endpoints for managing customers, products, orders, and customer accounts.
 
 Features
+
 Customer Management:
 Add new customers
 Retrieve customer details
 Update customer information
 Delete customers
+
 Product Management:
 Add new products
 Retrieve product details
 Update product information
 Delete products
 View and manage product stock levels
+
 Order Management:
 Place orders
 Retrieve order details
@@ -21,21 +24,31 @@ Track order status
 View order history
 Cancel orders
 Calculate order total price
+
 Customer Account Management:
 Create customer accounts
 Retrieve account details
 Update account information
 Delete accounts
+
 Auto-Restock:
 Automatically restock products when stock levels fall below a threshold.
 Technologies Used
+
 Flask: Python web framework
+
 SQLAlchemy: Object-Relational Mapper (ORM) for database interaction
+
 Marshmallow: Object serialization/deserialization library
+
 MySQL: Relational database
+
 mysql-connector-python: MySQL connector for Python
+
 APScheduler: Task scheduling library
+
 Database Setup
+
 Install MySQL: If you don't have MySQL installed, download and install it from the official website.
 Create Database: Create a new database named e_commerce_db.
 Create Tables: The necessary tables (Customers, Products, Orders, Customer_Accounts, Order_Product) will be created automatically when you run the application for the first time.
